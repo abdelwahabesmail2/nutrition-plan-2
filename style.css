@@ -1,0 +1,207 @@
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --bg-color: #f4f7f6;
+    --text-color: #2c3e50;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--secondary-color);
+}
+
+/* Calendar Styles */
+.calendar-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.calendar-header button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #7f8c8d;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+}
+
+.day:hover {
+    background: #e8f8f5;
+}
+
+.day.selected {
+    border: 2px solid var(--primary-color);
+    background: #e8f8f5;
+}
+
+.day.completed {
+    background: var(--primary-color);
+    color: white;
+}
+
+.day.partial {
+    background: #f39c12;
+    color: white;
+}
+
+/* Diet Section Styles */
+.diet-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+#selected-date-display {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.meal-card {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.meal-card h3 {
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+.food-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.food-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.food-item label {
+    flex: 1;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.food-item.checked label {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.substitute-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.substitute-input {
+    display: none;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.substitute-input.active {
+    display: block;
+}
+
+/* Success Message */
+#success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid #c3e6cb;
+}
+
+.hidden {
+    display: none !important;
+}
